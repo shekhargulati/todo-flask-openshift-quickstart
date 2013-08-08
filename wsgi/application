@@ -14,3 +14,5 @@ except IOError:
 # 
 
 from hello import app as application
+from hello import *
+db.create_all()
