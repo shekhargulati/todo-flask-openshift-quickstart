@@ -6,6 +6,5 @@ setup(name='YourAppName',
       author='Your Name',
       author_email='example@example.com',
       url='http://www.python.org/sigs/distutils-sig/',
-     install_requires=['Flask>=0.10',
-        'SQLAlchemy'],
+     install_requires=['Flask>=0.7.2', 'MarkupSafe' , 'Flask-SQLAlchemy>=0.16'],
      )
