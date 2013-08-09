@@ -1,5 +1,5 @@
 <!doctype html>
-<title>SQLAlchemy Todo</title>
+<title>TodoApp -- Store your Todo items</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <style>
@@ -21,17 +21,18 @@ body {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="brand" href="#">TodoApp</a>
+				<a class="brand" href="/">TodoApp</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="/">Home</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
 			</div>
 		</div>
 </div>
-<h1>SQLAlchemy Todo</h1>
+
+<h1></h1>
 
 {%- for category, message in get_flashed_messages(with_categories=true) %}
   <p class="flask {{ category }}-flash">{{
@@ -39,4 +40,4 @@ body {
 {%- endfor %}
 {% block body %}{% endblock %}
 <hr>
-<address>SQLAlchemy and Flask powered todo application</address>
+<footer>Todo App built using Flask,SQLAlchemy, PostgreSQL , and Twitter Bootstrap</footer>
