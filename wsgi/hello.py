@@ -53,7 +53,7 @@ def show_or_update(todo_id):
         return render_template('view.html',todo=todo_item)
     todo_item.title = request.form['title']
     todo_item.text  = request.form['text']
-    todo_item.done  = ('done.%d' % todo.id) in request.form
+    todo_item.done  = ('done.%d' % todo_id) in request.form
     db.session.commit()
     return redirect(url_for('show_all'))
 
