@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="main" class="container">
+  
+  <form action="" method=post class="form-horizontal">
+    <h2>Create New Todo</h2>
+    <div class="control-group">
+        <div class="controls">
+          <input type="text" id="title" name="title" class="input-xlarge"
+            placeholder="Please give title to todo item" value="{{ todo.title }}"
+            required>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+          <textarea name="text" rows=10 class="input-xlarge" placeholder="describle the todo item" required>{{ todo.text }}</textarea>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+          <input type=checkbox name=done.{{ todo.id }}{{ " checked" if todo.done }}>
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn btn-success">Update Todo</button>
+          <a href="{{ url_for('show_all') }}">Back to list</a>
+        </div>
+    </div>
+  </form>
+<div>
+{% endblock %}
