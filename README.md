@@ -1,3 +1,19 @@
-The OpenShift `python` cartridge documentation can be found at:
+## Todo Application##
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-python/README.md
+A simple todo application built using Python 2.6 , Flask , SQLAlchemy , PostgreSQL 9.2 , and Twitter Bootstrap.
+
+1. Create the application using 
+```
+$ rhc app create todo python-2.6 postgresql-9.2
+```
+
+2. Pull the source code from github
+```
+$ git remote add upstream -m master https://github.com/shekhargulati/todo-flask-openshift-quickstart.git
+$ git pull -s recursive -X theirs upstream master
+```
+
+3. Push the application to OpenShift
+```
+$ git push
+```
