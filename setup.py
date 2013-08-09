@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='YourAppName',
+setup(name='TodoApp',
       version='1.0',
       description='OpenShift App',
       author='Your Name',

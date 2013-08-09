@@ -43,7 +43,7 @@ def new():
             db.session.add(todo)
             db.session.commit()
             flash(u'Todo item was successfully created')
-            return redirect(url_for('show_all'))
+            return redirect(url_for('index'))
     return render_template('new.html')
 
 @app.route('/todos/<int:todo_id>', methods = ['GET' , 'POST'])
