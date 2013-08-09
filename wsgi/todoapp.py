@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config.from_pyfile('hello.cfg')
+app.config.from_pyfile('todoapp.cfg')
 db = SQLAlchemy(app)
 
 
@@ -25,8 +25,8 @@ class Todo(db.Model):
 
 
 @app.route('/')
-def show_all():
-    return render_template('show_all.html',
+def index():
+    return render_template('index.html',
         todos=Todo.query.order_by(Todo.pub_date.desc()).all()
     )
 
@@ -55,16 +55,7 @@ def show_or_update(todo_id):
     todo_item.text  = request.form['text']
     todo_item.done  = ('done.%d' % todo_id) in request.form
     db.session.commit()
-    return redirect(url_for('show_all'))
-
-
-@app.route('/update', methods=['POST'])
-def update_done():
-    for todo in Todo.query.all():
-        todo.done = ('done.%d' % todo.id) in request.form
-    flash('Updated status')
-    db.session.commit()
-    return redirect(url_for('show_all'))
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
