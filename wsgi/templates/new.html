@@ -3,14 +3,26 @@
 <div id="main" class="container">
   <h2>New Todo Item</h2>
   <form action="" method=post class="form-horizontal">
-    <p>
-      Title:
-      <input type=text name=title value="{{ request.form.title }}">
-    <p>Text:
-    <p><textarea name=text rows=10 cols=40>{{ request.form.text }}</textarea>
-    <p>
-      <input type=submit value="Create entry">
-      <a href="{{ url_for('show_all') }}">Back to list</a>
+    <div class="control-group">
+        <div class="controls">
+          <input type="text" id="title" name="title" class="input-xlarge"
+            placeholder="Enter title" value="{{ request.form.title }}"
+            required>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+          <textarea name=text rows=10 cols=40 placeholder="Enter text" required>{{ request.form.text }}</textarea>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn btn-success">Create Todo</button>
+          <a href="{{ url_for('show_all') }}">Back to list</a>
+        </div>
+    </div>
   </form>
 <div>
 {% endblock %}
