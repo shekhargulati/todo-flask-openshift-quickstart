@@ -7,14 +7,14 @@
     <div class="control-group">
         <div class="controls">
           <input type="text" id="title" name="title" class="input-xlarge"
-            placeholder="Enter title" value="{{ request.form.title }}"
+            placeholder="Please give title to todo item" value="{{ request.form.title }}"
             required>
         </div>
     </div>
 
     <div class="control-group">
         <div class="controls">
-          <textarea name="text" rows=10 class="input-xlarge" placeholder="Enter text" required>{{ request.form.text }}</textarea>
+          <textarea name="text" rows=10 class="input-xlarge" placeholder="describle the todo item" required>{{ request.form.text }}</textarea>
         </div>
     </div>
 
