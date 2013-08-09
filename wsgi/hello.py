@@ -46,7 +46,7 @@ def new():
             return redirect(url_for('show_all'))
     return render_template('new.html')
 
-@app.route('/todos/<todo_id>', methods = ['GET' , 'PUT'])
+@app.route('/todos/<int:todo_id>', methods = ['GET' , 'PUT'])
 def show_or_update(todo_id):
     todo_item = Todo.query.get(todo_id)
     if request.method == 'GET':
