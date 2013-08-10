@@ -34,7 +34,8 @@ body {
 </div>
 
 <div id="main" class="container">
-	{%- for category, message in get_flashed_messages(with_categories=true) %}
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
 	  <div class="alert">
 		    <ul class="flashes">
 		    {% for message in messages %}
@@ -42,7 +43,8 @@ body {
 		    {% endfor %}
 		    </ul>
 		</div>
-	{%- endfor %}
+	{% endif %}
+	{% endwith %}
 
 	{% block body %}{% endblock %}
 	<hr>
