@@ -8,10 +8,10 @@ body {
 	padding-bottom: 100px;
 }
 </style>
-<link href="/static/bootstrap.css" rel="stylesheet">
-<link href="/static/bootstrap-responsive.css" rel="stylesheet">
-<script src="/static/jquery.js"></script>
-<script src="/static/bootstrap.js"></script>
+<link href="/static/css/bootstrap.css" rel="stylesheet">
+<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/bootstrap.js"></script>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
@@ -33,11 +33,17 @@ body {
 		</div>
 </div>
 
-{%- for category, message in get_flashed_messages(with_categories=true) %}
-  <p class="flask {{ category }}-flash">{{
-    "Error: " if category == 'error' }}{{ message }}</p>
-{%- endfor %}
 <div id="main" class="container">
+	{%- for category, message in get_flashed_messages(with_categories=true) %}
+	  <div class="alert">
+		    <ul class="flashes">
+		    {% for message in messages %}
+		      <li>{{ message }}</li>
+		    {% endfor %}
+		    </ul>
+		</div>
+	{%- endfor %}
+
 	{% block body %}{% endblock %}
 	<hr>
 	<footer id="footer">
