@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_pyfile('todoapp.cfg')
+app.config['PROPAGATE_EXCEPTIONS'] = True
 db = SQLAlchemy(app)
 
 
